@@ -30,7 +30,6 @@ class Projects extends Component{
         <ProjectsBar />
         <div className="projects-holder">
           {projectCards}
-
         </div>
       </div>
     )
