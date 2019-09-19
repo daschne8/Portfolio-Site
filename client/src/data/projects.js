@@ -1,0 +1,14 @@
+export const ProjectsData =  [
+    {"id":1,"github_url":"https://github.com/daschne8/reddit-analyser","blog_url":"https://daschne8.github.io/reddit_text_analyzer_react_final_project","title":"Reddit Text Sentiment Analyzer","description":"React front-end Rails back-end application that accepts queries for either a User or Subreddit and examine a snapshot of comments for keywords and their associated emotions.","youtube_id":"MVXQhcmWvVI","nav_title":"Reddit Analyzer","created_at":"2019-09-15T16:08:49.622Z","updated_at":"2019-09-15T16:08:49.622Z"},
+    {"id":2,"github_url":"https://github.com/daschne8/going-refactor","blog_url":"https://daschne8.github.io/rails_project_js_refactor","title":"JS Linked Grocery List SPA","description":"Rails based linked grocery list app that uses Javascript to function as a single page application.","youtube_id":"udtweQW0e38","nav_title":"Going JS","created_at":"2019-09-15T16:08:49.631Z","updated_at":"2019-09-15T16:08:49.631Z"},
+    {"id":3,"github_url":"https://github.com/daschne8/if-your-going","blog_url":"https://daschne8.github.io/rails_app_-_linked_grocery_list","title":"If you're going.","description":"Rails based website for a linked grocery list.","youtube_id":"WV1f33ST_W8","nav_title":"Linked Grocery","created_at":"2019-09-15T16:08:49.639Z","updated_at":"2019-09-15T16:08:49.639Z"},
+    {"id":4,"github_url":"https://github.com/daschne8/sinatra-portfolio-project","blog_url":"https://daschne8.github.io/sinatra_cms_project","title":"Sinatra CMS Games Library","description":"Sinatra based CMS for a video game library, uses steam api and nokogiri to seed data.","youtube_id":"TDRi0JZrWO4","nav_title":"Games CMS","created_at":"2019-09-15T16:08:49.645Z","updated_at":"2019-09-15T16:08:49.645Z"},
+    {"id":5,"github_url":"https://github.com/daschne8/RubyCliProject","blog_url":"https://daschne8.github.io/writing_the_ruby_cli","title":"CLI Nearby Flights Web Scraper","description":"Ruby based CLI, uses combination of nokogiri and watir to scrape kayak website for flight information","youtube_id":"99Pj37P8Zp4","nav_title":"Travel CLI","created_at":"2019-09-15T16:08:49.653Z","updated_at":"2019-09-15T16:08:49.653Z"},
+    {"id":6,"github_url":"https://github.com/daschne8/ReactPortfolio","blog_url":"","title":"This Website Front-End","description":"The React code for the website you're browsing. Still under construction, expect more functionality soon!","youtube_id":"","nav_title":"This React","created_at":"2019-09-15T16:08:49.658Z","updated_at":"2019-09-15T16:08:49.658Z"},
+    {"id":7,"github_url":"https://github.com/daschne8/RailsPortfolio","blog_url":"","title":"This Website Back-End","description":"The Rails code acting as the api for the website you are currently browsing","youtube_id":"","nav_title":"This Rails","created_at":"2019-09-15T16:08:49.668Z","updated_at":"2019-09-15T16:08:49.668Z"}
+  ]
+
+export const TestData = {
+  ONE: 1,
+  TWO: 2
+}
