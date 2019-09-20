@@ -40,7 +40,7 @@ class ProjectCard extends Component{
         </div>
         <div className="project-links">
           <a href={this.props.github}><GitIcon style={{width:25 , height:25}}/></a>
-          {this.props.blog ? <a href={this.props.blog}><BlogIcon style={{width:25 , height:25}}/></a> : null}
+          <a href={this.props.blog}><BlogIcon style={{width:25 , height:25}}/></a>
         </div>
         <div className="project-about">
           <h4>About:</h4>
