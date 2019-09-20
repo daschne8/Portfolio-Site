@@ -1,21 +1,12 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
-import * as PJS from "../data/projects"
-
+import {fetchProjects} from '../actions/projectsAction'
 
 class ProjectsBar extends Component{
-  state = {
-    projects: []
-  }
 
-  componentDidMount = () =>{
-    this.setState({
-      projects: PJS.ProjectsData
-    })
-  }
 
   render(){
-    let projList = this.state.projects.map(proj =>
+    let projList = this.props.projects.map(proj =>
         <a href={"#section-"+proj.id}  id={proj.id} key={proj.id} className='proj-link'>
           <div className={(proj.id === this.props.section) ? 'activeP' : 'inactiveP'}>{proj.nav_title}</div>
         </a>
@@ -31,8 +22,13 @@ class ProjectsBar extends Component{
   }
 }
 
-const mapStateToProps = ({page}) =>({
-  section: page.section
+const mapStateToProps = (state) =>({
+  section: state.page.section,
+  projects: state.projects.projects
 })
 
-export default connect(mapStateToProps)(ProjectsBar)
+const mapDispatchToProps = dispatch =>({
+  fetchProjects: () => dispatch(fetchProjects())
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProjectsBar)
