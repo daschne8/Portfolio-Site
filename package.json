@@ -1,7 +1,7 @@
 {
   "name": "railssite",
   "engines": {
-    "node": "6.3.1"
+    "node": "12.6.0"
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
