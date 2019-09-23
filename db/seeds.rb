@@ -43,22 +43,13 @@ cli = Project.find_or_create_by(
   description: "Ruby based CLI, uses combination of nokogiri and watir to scrape kayak website for flight information"
 )
 
-thisReact = Project.find_or_create_by(
- nav_title: "This React",
- title: "This Website Front-End",
- github_url: "https://github.com/daschne8/ReactPortfolio",
- youtube_id:  "",
- blog_url: "",
- description: "The React code for the website you're browsing. Still under construction, expect more functionality soon!"
-)
-
 thisRails = Project.find_or_create_by(
- nav_title: "This Rails",
- title: "This Website Back-End",
+ nav_title: "This Site",
+ title: "This Website",
  github_url: "https://github.com/daschne8/RailsPortfolio",
  youtube_id:  "",
  blog_url: "",
- description: "The Rails code acting as the api for the website you are currently browsing"
+ description: "Bundled postgreSQL database, Ruby on Rails backend and React Front end hosted on heroku"
 )
 
 # aaa = Project.find_or_create_by(
