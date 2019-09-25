@@ -34,4 +34,5 @@ config/secrets*
 
 
 /public
+
 .env
