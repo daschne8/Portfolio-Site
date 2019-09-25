@@ -14,7 +14,7 @@ import Projects from './containers/projects'
 function App() {
   return (
     <div className="App">
-      <header>Site currently under construction. Heroku deply verification.</header>
+      <header>Site currently under construction, Sorry for any inconvenience.</header>
       <Router>
         <NavBar />
         <Switch>

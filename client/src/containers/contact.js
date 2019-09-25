@@ -1,9 +1,13 @@
 import React,{Component} from 'react'
+import {connect} from 'react-redux'
 
-export default class Contact extends Component{
+import {sendEmail} from '../actions/emailAction'
+
+
+class Contact extends Component{
   state = {
-    name:"",
     email:"",
+    subject:"",
     desc:""
   }
 
@@ -11,20 +15,21 @@ export default class Contact extends Component{
     event.persist()
     console.log(event);
     switch (event.target.id) {
-      case "name":
-        this.setState({...this.state, name:event.target.value})
+      case "subject":
+        this.setState({...this.state, subject: event.target.value})
         break;
       case "email":
-        this.setState({...this.state, email:event.target.value})
+        this.setState({...this.state, email: event.target.value})
         break;
       case "desc":
-        this.setState({...this.state, desc:event.target.value})
+        this.setState({...this.state, desc: event.target.value})
         break;
     }
   }
 
   handleOnSubmit = event =>{
     event.preventDefault()
+    this.props.sendEmail(this.state.email, this.state.subject, this.state.desc)
   }
 
   render(){
@@ -32,10 +37,9 @@ export default class Contact extends Component{
       <div className="contact-page">
       <div style={{flex: '1'}}></div>
       <div className="contact-form" >
-      <a href="daniel.j.schneider88@gmail.com">Daniel.J.Schneider88@Gmail.com</a>
         <form onSubmit={ event => this.handleOnSubmit(event)}>
-          <input type="text" placeholder="Name (required)" id="name" value={this.state.name} onChange={event => this.handleOnChange(event)}/>
-          <input type="text" placeholder="Email (required)" id="email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
+        <input type="text" placeholder="Email (required)" id="email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
+          <input type="text" placeholder="Subject (required)" id="subject" value={this.state.subject} onChange={event => this.handleOnChange(event)}/>
           <textArea placeholder="Description (required)" id="desc" value={this.state.description} onChange={event => this.handleOnChange(event)}/>
           <button type="submit">Contact</button>
         </form>
@@ -45,3 +49,14 @@ export default class Contact extends Component{
     )
   }
 }
+
+const mapStateToProps = ({email}) =>({
+  error: email.error,
+  error_message: email.error_message
+})
+
+const mapDispatchToProps = dispatch =>({
+  sendEmail: (email,subject,description) => dispatch(sendEmail(email,subject,description))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Contact)
