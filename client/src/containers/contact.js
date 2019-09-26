@@ -35,6 +35,7 @@ class Contact extends Component{
       subject:"",
       desc:""
     })
+    document.getElementById('desc').value = ""
   }
 
   render(){
@@ -42,7 +43,7 @@ class Contact extends Component{
       <div className="contact-page">
       <div style={{flex: '1'}}></div>
       <div className="contact-form" >
-        {this.props.error ? <h4>{this.props.error_message}</h4> : null}
+        {this.props.error ? <h4>Error: please use daniel.j.schneider88@gmail.com{this.props.error_message}</h4> : null}
         <form onSubmit={ event => this.handleOnSubmit(event)}>
         <input type="text" placeholder="Email (required)" id="email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
           <input type="text" placeholder="Subject (required)" id="subject" value={this.state.subject} onChange={event => this.handleOnChange(event)}/>
