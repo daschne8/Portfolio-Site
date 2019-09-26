@@ -30,6 +30,11 @@ class Contact extends Component{
   handleOnSubmit = event =>{
     event.preventDefault()
     this.props.sendEmail(this.state.email, this.state.subject, this.state.desc)
+    this.setState({
+      email:"",
+      subject:"",
+      desc:""
+    })
   }
 
   render(){
@@ -37,10 +42,11 @@ class Contact extends Component{
       <div className="contact-page">
       <div style={{flex: '1'}}></div>
       <div className="contact-form" >
+        {this.props.error ? <h4>{this.props.error_message}</h4> : null}
         <form onSubmit={ event => this.handleOnSubmit(event)}>
         <input type="text" placeholder="Email (required)" id="email" value={this.state.email} onChange={event => this.handleOnChange(event)}/>
           <input type="text" placeholder="Subject (required)" id="subject" value={this.state.subject} onChange={event => this.handleOnChange(event)}/>
-          <textArea placeholder="Description (required)" id="desc" value={this.state.description} onChange={event => this.handleOnChange(event)}/>
+          <textArea placeholder="Description (required)" id="desc" onChange={event => this.handleOnChange(event)}>{this.state.desc}</textArea>
           <button type="submit">Contact</button>
         </form>
       </div>
