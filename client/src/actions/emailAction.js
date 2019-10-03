@@ -7,13 +7,13 @@ export function sendEmail(email, description, subject){
         if (res.ok) {
           return res.json()
         } else {
-          throw new Error("Sorry something went wrong, you can contact me at daniel.j.schneider88@gmail.com")
+          throw Error("Sorry something went wrong, you can contact me at daniel.j.schneider88@gmail.com")
         }})
         .then(data => {
           dispatch({type: "SENT_EMAIL"})
         })
         .catch((err) => {
-          dispatch({type: "THROW_ERROR"})
+          dispatch({type: "THROW_ERROR", payload: err.message})
         })
   }
 }
